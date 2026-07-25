@@ -1,0 +1,17 @@
+[package]
+name = "bader_os"
+version = "0.1.0"
+edition = "2024"
+authors = ["Author Name <author@example.com>"]
+[[bin]]
+name = "bader_os"
+test = false      #binary does not support building in test mode
+bench = false     #disable binary building in bench mode
+
+# the profile used for `cargo build`
+[profile.dev]
+panic = "abort" # disable stack unwinding on panic
+
+# the profile used for `cargo build --release`
+[profile.release]
+panic = "abort" # disable stack unwinding on panic
